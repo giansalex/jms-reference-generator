@@ -1,0 +1,29 @@
+{
+    "name": "giansalex/jms-generator",
+    "description": "Jms YAML Refernece Generator",
+    "keywords": ["yaml", "generator", "jms"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Giancarlos Salas",
+            "email": "giansalex@gmail.com"
+        }
+    ],
+    "type": "library",
+    "homepage": "https://github.com/giansalex/jms-reference-generator",
+    "require": {
+        "php": ">=5.5.9",
+        "symfony/property-info": "^3.4",
+        "phpdocumentor/reflection-docblock": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Giansalex\\Serializer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
