@@ -26,7 +26,15 @@ class SwaggerTest extends \PHPUnit_Framework_TestCase
     {
         $result = $this->swagger->fromClass(MyObject::class);
 
-        var_dump($result);
+        $this->assertTrue(isset($result[MyObject::class]));
+
+        $props = $result[MyObject::class]['properties'];
+        $this->assertTrue(isset($props['id']));
+        $this->assertTrue(isset($props['name']));
+        $this->assertTrue(isset($props['date']));
+        $this->assertTrue(isset($props['mount']));
+        $this->assertTrue(isset($props['valid']));
+        $this->assertTrue(isset($props['notes']));
     }
 
 }
