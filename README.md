@@ -1,4 +1,4 @@
-# Jms Generator Refernce
+# Jms Generator Yaml Reference
 
 ## Example
 
