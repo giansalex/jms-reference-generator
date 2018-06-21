@@ -25,5 +25,8 @@
         "psr-4": {
             "Tests\\Serializer\\": "tests/"
         }
+    },
+    "require-dev": {
+        "symfony/yaml": "^3.4"
     }
 }
