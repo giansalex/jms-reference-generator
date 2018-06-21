@@ -6,7 +6,7 @@
  * Time: 10:51 AM
  */
 
-namespace Tests\Giansalex\Serializer;
+namespace Tests\Serializer;
 
 use Giansalex\Serializer\JmsGenerator;
 

@@ -6,7 +6,7 @@
  * Time: 11:03 AM
  */
 
-namespace Tests\Giansalex\Serializer;
+namespace Tests\Serializer;
 
 /**
  * Class MyObject
