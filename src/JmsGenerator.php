@@ -56,7 +56,7 @@ class JmsGenerator
             $this->registerClass($class);
         }
 
-        return ['definitions' => $this->all];
+        return $this->all;
     }
 
     /**
