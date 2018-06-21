@@ -1,15 +1,6 @@
-# PHP Object to SWAGGER
-[![Travis-CI](https://img.shields.io/travis/giansalex/phpobj-swagger.svg?branch=master&style=flat-square)](https://travis-ci.org/giansalex/phpobj-swagger)  
+# Jms Generator Refernce
 
-PHP Objects to Swagger Definitions.
-
-## Install
-Via Composer from [packagist.org](https://packagist.org/packages/giansalex/swagger-objects).
-```bash
-composer require giansalex/swagger-objects
-```
-
-## Php object
+## Example
 
 ```php
 class Document
@@ -65,9 +56,7 @@ class Document
 ## Result
 ```php
 [
-'definitions' => [
-    'Document' => [
-        'type' => 'object',
+     'Document' => [
         'properties' => [
             'tipoDoc' => [
                 'type' => 'string'
@@ -76,7 +65,6 @@ class Document
                 'type' => 'string'
             ]
         ]
-    ]
-  ]
+     ]
 ]
 ```
