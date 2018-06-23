@@ -32,7 +32,7 @@ class YamlSaveTest extends \PHPUnit_Framework_TestCase
         foreach ($result as $class => $props) {
             $yaml = Yaml::dump([$class => $props], 4);
             $name = $this->getNameClass($class);
-            file_put_contents('model.'.$name.'.yaml', $yaml);
+            file_put_contents(__DIR__.'/model.'.$name.'.yaml', $yaml);
         }
     }
 
