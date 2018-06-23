@@ -9,6 +9,7 @@
 namespace Tests\Serializer;
 
 use Giansalex\Serializer\JmsGenerator;
+use Giansalex\Serializer\PropertyExtractorFactory;
 use Symfony\Component\Yaml\Yaml;
 
 class YamlSaveTest extends \PHPUnit_Framework_TestCase
@@ -20,7 +21,8 @@ class YamlSaveTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->swagger = new JmsGenerator();
+        $factory = new PropertyExtractorFactory();
+        $this->swagger = new JmsGenerator($factory->getExtractor());
     }
 
     public function testFromObject()

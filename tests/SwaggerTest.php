@@ -9,6 +9,7 @@
 namespace Tests\Serializer;
 
 use Giansalex\Serializer\JmsGenerator;
+use Giansalex\Serializer\PropertyExtractorFactory;
 
 class SwaggerTest extends \PHPUnit_Framework_TestCase
 {
@@ -19,7 +20,8 @@ class SwaggerTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->swagger = new JmsGenerator();
+        $factory = new PropertyExtractorFactory();
+        $this->swagger = new JmsGenerator($factory->getExtractor());
     }
 
     public function testFromObject()
