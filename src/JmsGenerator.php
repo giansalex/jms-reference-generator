@@ -107,13 +107,7 @@ class JmsGenerator
             return $class;
         }
 
-        $parent = get_parent_class($class);
-        $props = [];
-        if ($parent) {
-            $props = $this->getProperties($parent);
-        }
-
-        $props = array_merge($props, $this->getProperties($class));
+        $props = $this->getProperties($class);
         $this->all[$class] = [
             'properties' => $props
         ];
