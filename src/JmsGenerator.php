@@ -8,9 +8,7 @@
 
 namespace Giansalex\Serializer;
 
-use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;
-use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
-use Symfony\Component\PropertyInfo\PropertyInfoExtractor;
+use Symfony\Component\PropertyInfo\PropertyInfoExtractorInterface;
 use Symfony\Component\PropertyInfo\Type;
 
 /**
@@ -24,16 +22,17 @@ class JmsGenerator
     private $all;
 
     /**
-     * @var PropertyInfoExtractor
+     * @var PropertyInfoExtractorInterface
      */
     private $extractor;
 
     /**
      * Swagger constructor.
+     * @param PropertyInfoExtractorInterface $extractor
      */
-    public function __construct()
+    public function __construct(PropertyInfoExtractorInterface $extractor)
     {
-        $this->extractor = $this->getPropertyExtractor();
+        $this->extractor = $extractor;
     }
 
     /**
@@ -57,36 +56,6 @@ class JmsGenerator
         }
 
         return $this->all;
-    }
-
-    /**
-     * @return PropertyInfoExtractor
-     */
-    private function getPropertyExtractor()
-    {
-        $phpDocExtractor = new PhpDocExtractor();
-        $reflectionExtractor = new ReflectionExtractor();
-
-        // array of PropertyListExtractorInterface
-        $listExtractors = array($reflectionExtractor);
-
-        // array of PropertyTypeExtractorInterface
-        $typeExtractors = array($phpDocExtractor, $reflectionExtractor);
-
-        // array of PropertyDescriptionExtractorInterface
-        $descriptionExtractors = array($phpDocExtractor);
-
-        // array of PropertyAccessExtractorInterface
-        $accessExtractors = array($reflectionExtractor);
-
-        $this->extractor = new PropertyInfoExtractor(
-            $listExtractors,
-            $typeExtractors,
-            $descriptionExtractors,
-            $accessExtractors
-        );
-
-        return $this->extractor;
     }
 
     /**
