@@ -10,23 +10,24 @@ namespace Tests\Serializer;
 
 use Giansalex\Serializer\JmsGenerator;
 use Giansalex\Serializer\PropertyExtractorFactory;
+use PHPUnit\Framework\TestCase;
 
-class SwaggerTest extends \PHPUnit_Framework_TestCase
+class JmsGeneratorTest extends TestCase
 {
     /**
      * @var JmsGenerator
      */
-    private $swagger;
+    private $generator;
 
     protected function setUp()
     {
         $factory = new PropertyExtractorFactory();
-        $this->swagger = new JmsGenerator($factory->getExtractor());
+        $this->generator = new JmsGenerator($factory->getExtractor());
     }
 
     public function testFromObject()
     {
-        $result = $this->swagger->fromClass(MyObject::class);
+        $result = $this->generator->fromClass(MyObject::class);
 
         $this->assertTrue(isset($result[MyObject::class]));
 
@@ -41,7 +42,7 @@ class SwaggerTest extends \PHPUnit_Framework_TestCase
 
     public function testFromSubObject()
     {
-        $result = $this->swagger->fromClass(SubObject::class);
+        $result = $this->generator->fromClass(SubObject::class);
 
         $this->assertTrue(isset($result[SubObject::class]));
 

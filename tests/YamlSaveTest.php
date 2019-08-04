@@ -10,9 +10,10 @@ namespace Tests\Serializer;
 
 use Giansalex\Serializer\JmsGenerator;
 use Giansalex\Serializer\PropertyExtractorFactory;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Yaml\Yaml;
 
-class YamlSaveTest extends \PHPUnit_Framework_TestCase
+class YamlSaveTest extends TestCase
 {
     /**
      * @var JmsGenerator
@@ -34,6 +35,7 @@ class YamlSaveTest extends \PHPUnit_Framework_TestCase
             $name = $this->getNameClass($class);
             file_put_contents(__DIR__.'/model.'.$name.'.yaml', $yaml);
         }
+        $this->assertTrue(true);
     }
 
     /**

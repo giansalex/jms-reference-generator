@@ -68,3 +68,13 @@ class Document
      ]
 ]
 ```
+
+Yaml Format
+```yaml
+Document:
+    properties:
+        tipoDoc:
+            type: string
+        nroDoc:
+            type: string
+```
