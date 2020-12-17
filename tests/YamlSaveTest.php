@@ -20,7 +20,7 @@ class YamlSaveTest extends TestCase
      */
     private $swagger;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $factory = new PropertyExtractorFactory();
         $this->swagger = new JmsGenerator($factory->getExtractor());

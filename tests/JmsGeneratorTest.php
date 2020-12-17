@@ -19,7 +19,7 @@ class JmsGeneratorTest extends TestCase
      */
     private $generator;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $factory = new PropertyExtractorFactory();
         $this->generator = new JmsGenerator($factory->getExtractor());
