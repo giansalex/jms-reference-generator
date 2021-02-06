@@ -16,7 +16,6 @@
         "symfony/property-info": "^5.2",
         "phpdocumentor/reflection-docblock": "^5.2"
     },
-    ,
     "require-dev": {
         "symfony/yaml": "^5.2",
         "phpunit/phpunit": "^8"
