@@ -12,12 +12,12 @@
     "type": "library",
     "homepage": "https://github.com/giansalex/jms-reference-generator",
     "require": {
-        "php": "^7.2",
-        "symfony/property-info": "^5.2",
-        "phpdocumentor/reflection-docblock": "^5.2"
+        "php": "^7.4",
+        "symfony/property-info": "^5.4",
+        "phpdocumentor/reflection-docblock": "^5.3"
     },
     "require-dev": {
-        "symfony/yaml": "^5.2",
+        "symfony/yaml": "^5.4",
         "phpunit/phpunit": "^8"
     },
     "autoload": {
