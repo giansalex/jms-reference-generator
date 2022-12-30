@@ -77,13 +77,13 @@ class JmsGenerator
                 $tipo = $type->getBuiltinType();
                 if ($tipo == 'array') {
 
-                    $prop = ['type' => $this->getItemArray($type)];
+                    $prop = ['type' => $this->getItemArray($type, $class)];
                 } elseif ($tipo == 'object') {
                     $className = $type->getClassName();
                     if ($this->isDateTime($className)) {
                         $prop = ['type' => 'DateTime'];
                     } else {
-                        $name = $this->registerClass($className);
+                        $name = $className === $class ? $class : $this->registerClass($className);
                         $prop = ['type' => $name];
                     }
                 } else {
@@ -115,16 +115,16 @@ class JmsGenerator
         return $class;
     }
 
-    private function getItemArray(Type $type)
+    private function getItemArray(Type $type, string $class)
     {
-        $typeCollection = $type->getCollectionValueType();
+        $typeCollection = $type->getCollectionValueTypes()[0] ?? null;
         if (empty($typeCollection)) {
             return 'array<string>';
         }
 
         $className = $typeCollection->getClassName();
         if ($className) {
-            $name = $this->registerClass($className);
+            $name = $className === $class ? $class : $this->registerClass($className);
             $itemType = 'array<'.$name.'>';
         } else {
             $type = $typeCollection->getBuiltinType();
